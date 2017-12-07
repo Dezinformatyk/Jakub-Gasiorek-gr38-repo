@@ -1,0 +1,102 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+//Napisac program, ktory tworzy plik oraz zapisuje w nim dowolny tekst.
+/*
+int main()
+{
+	fstream plik;
+	plik.open("dane.txt");
+	string imie;
+	imie = "Mam na imie Jakub";
+	plik << imie;
+	plik.close();
+	system("pause");
+	return 0;
+}*/
+//Napisac program, ktory zawiera dowolna funkcje, np. iloczyn(a,b), nastepnie tworzy plik i zapisuje w nim dane oraz wynik.
+/*
+int iloczyn(int a, int b)
+{
+	return a*b;
+}
+int main()
+{
+	fstream plik;
+	plik.open("wynik.txt");
+	int x, y;
+	cout << "Podaj x: ";
+	cin >> x;
+	cout << "\nPodaj y: ";
+	cin >> y;
+	plik << x << " " << y << "\n" << "Iloczyn wynosi: " << iloczyn(x, y);
+	plik.close();
+	cout << "Wynik zostal zapisany w pliku";
+	system("pause");
+	return 0;
+}*/
+//Napisac program, ktory zapisuje tekst podany z klawiatury w pliku a nastepnie wyswietla zawartosc pliku w konsoli.
+/*
+int main()
+{
+	fstream plik;
+	plik.open("tekst.txt");
+	if( plik.good() == true )
+	{
+	string a;
+	cout << "Wpisz cos: ";
+	cin >> a;
+	plik << a;
+	cout << "Twoj tekst z pliku: ";
+	while(getline(plik, a));
+	cout << a << endl;
+	plik.close();
+	}
+	system("pause");
+	return 0;
+}*/
+//Napisac program, ktory tworzy plik losowe.txt z 20 losowymi liczbami a nastepnie wypisuje liczby parzyste i ich ilosc w drugim pliku parzyste.txt.
+/*
+int main()
+{
+	ifstream plik;
+	plik.open("dane.txt");
+	ofstream wynik;
+	wynik.open("wynik.txt");
+	int licznik = 0;
+	int tab[19];
+	for (int i = 0;i <= 19;i++)
+	{
+		tab[i] = std::rand();
+		plik >> tab[i];
+		if (tab[i] % 2 == 0)
+			wynik << tab[i];
+		licznik++;
+
+	}
+	wynik << licznik;
+	plik.close();
+	wynik.close();
+	system("pause");
+	return 0;
+}*/
+//TYLKO TEN NIE DZIALA Napisac program, ktory tworzy plik z wybranym tekstem a nastepnie wypisuje go w konsoli do momentu napotkania znaku @.
+/*
+int main()
+{
+	fstream plik;
+	plik.open("dane.txt");
+	string znak;
+	znak = "Pisz do mnie na adres slip@onet.pl";
+	plik << znak;
+	cout << "Twoj tekst z pliku: ";
+	while (getline(plik, znak) && znak != "@")
+	{
+		cout << znak << endl;
+		plik.close();
+	}
+
+system("pause");
+return 0;
+}*/
