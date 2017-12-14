@@ -1,0 +1,46 @@
+#include <iostream> using namespace std; //Napisac program, ktory zawiera dowolna zmienna i wskaznik na nia, wypisuje jej wartosc i adres w konsoli.  //Nastepnie wartosc zmiennej powinna byc zmieniona przez wskaznik i rowniez wypisana.  //Zmienna x po zmianie wartosci przez wskaznik : Z”. //->gdzie X, Y, Z to odpowiednie dane. /* int main() { 	int y = 5; 	int *z = &y; 	cout << "Wartosc wskaznika: " << *z << endl; 	cout << "Adres wskaznika: " << &z << endl; 	*z = 50; 	cout << "Wartosc aktualnie wynosi: " << y; 	system("pause"); 	return 0; }*/ //Napisac program, ktory zawiera funkcje przyjmujaca jako argument trzy zmienne(oryginalne) obliczajaca ich sume. //Nastepnie w tej samej funkcji zmienic ich wartosc i wyswietlic w celu sprawdzenia, czy na pewno ich oryginalne wartosci zostaly zmienione. /* int fun(int x, int y, int z) { 	int suma = x + y + z; 	x = 1; 	y = 2; 	z = 3; 	cout << x << " " << y << " " << z << endl; 	return suma; } int main() { 	int a, b, c; 	cout << "Podaj a: "; 	cin >> a; 	cout << "Podaj b:"; 	cin >> b; 	cout << "Podaj c:"; 	cin >> c; 	cout << "Suma: " << fun(a, b, c) << end; 	system("pause"); 	return 0; }*/ //Napisac program, ktory zawiera funkcje przyjmujaca jako argument tablice jednowymiarowa (oryginalna) i jej dlugosc  //a nastepnie podaje srednia liczb. Nastepnie w tej samej funkcji zmienic wartosci z tablicy i wyswietlic w celu sprawdzenia,  //czy na pewno dzialalismy na oryginalnej tablicy. /*
+void zamiana(int tab[])
+{
+	int suma = 0;
+	for (int i = 0; i < 10; i++)
+		suma += tab[i];
+	suma = suma / 10;
+	cout << "Srednia wynosi: " << suma;
+	for (int i = 0; i < 10; i++)
+	{
+		tab[i] += tab[i];
+		cout << tab[i];
+	}
+}
+int main()
+{
+	int tablica[10] = { 0, 3, 4, 3, 6, 7, 11, -5, -10, 87 };
+	zamiana(tablica);
+	for (int i = 0;i < 10;i++)
+		cout << tablica[i] << " ";
+	cout << endl;
+	system("pause");
+	return 0;
+}*/
+//Napisac program, ktory zawiera jednowymiarowa tablice dynamiczna - uzytkownik zostaje zapytany o rozmiar tablicy, //a nastepnie wyswietla elementy tablicy. Pierwszy element wynosi 2 a kazdy nastepny jest 2 razy wiekszy.  //Dodatkowo program ma wyswietlic adresy komorek tablicy.
+/*
+int main()
+{
+	int * tablica = new int[n];
+	cout << "Podaj rozmiar tablicy: ";
+	cin >> n;
+	tab[0] = 1;
+	for (int i=0;i <= n;i++)
+	{
+		tab[i] = tab[i] * 2;
+		cout << &tab[i];
+	}
+
+	delete[] tablica;
+	system("pause");
+	return 0;
+
+}*/
+//Napisac program, ktory zawiera funkcje przyjmujaca wskaznik na tablice int oraz jej dlugosc 
+//a nastepnie wyswietlajacy cyfry o nieparzystym indeksie tablicy. 
+//Tablica ma byc dynamiczna, o dlugosci i wartosciach podanych przez uzytkownika.
