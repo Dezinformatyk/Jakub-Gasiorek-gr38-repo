@@ -47,13 +47,13 @@ void dodaj(ptr_student &lista_student, ptr_student osoba)
 				w1->nast = osoba;
 	}
 }
-void usun(ptr_student, string imie)
+void usun(ptr_student head, string imie)
 {
 	Student *tmp = head;
 	Student *prev = nullptr;
 	while (tmp)
 	{
-		if (tmp->imie = imie) 
+		if (tmp->imie == imie)
 		{
 			if (prev == nullptr)
 			{
@@ -62,14 +62,24 @@ void usun(ptr_student, string imie)
 				return;
 			}
 		}
-	
-	else if (tmp->nast == nullptr)
-	{
-		prev->nast = nullptr;
-		delete tmp;
-		return;
+
+		else if (tmp->nast == nullptr)
+		{
+			prev->nast = nullptr;
+			delete tmp;
+			return;
+		}
+		else
+		{
+			prev->nast = tmp->nast;
+			delete tmp;
+			return;
+		}
 	}
-	else
+	else { 
+		prev = tmp;
+	tmp = tmp->next;
+	}
 }
 int main()
 {
@@ -81,6 +91,7 @@ int main()
 	return 0;
 	// wrzucic funkcje 
 }
+
 
 
 
