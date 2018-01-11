@@ -1,0 +1,86 @@
+#include <string>
+#include <iostream>
+using namespace std;
+
+struct Student {
+	string imie, nazwisko;
+	Student *nast;
+};
+typedef Student* ptr_student;
+
+void wyswietl(ptr_student head)
+{
+	while (head)
+	{
+		cout << "Imie: " << head->imie << " Nazwisko: " << head->nazwisko;
+		head = head->nast;
+	}
+}
+void dodaj(ptr_student &lista_student, ptr_student osoba)
+{
+	if (lista_student == nullptr)
+		lista_student = osoba;
+	else if (lista_student->nazwisko > osoba->nazwisko)
+	{
+		osoba->nast = lista_student;
+		lista_student = osoba;
+	}
+	else if (lista_student->nast == nullptr)
+		lista_student = osoba;
+	else
+	{
+		ptr_student w1 = lista_student;
+		ptr_student w2 = lista_student->nast;
+		while (w2 != nullptr)
+			if (w2->nazwisko < osoba->nazwisko)
+			{
+				w2 = w2->nast;
+				w1 = w1->nast;
+			}
+			else break;
+			if (w2)
+			{
+				osoba->nast = w2;
+				w1->nast = osoba;
+			}
+			else
+				w1->nast = osoba;
+	}
+}
+void usun(ptr_student, string imie)
+{
+	Student *tmp = head;
+	Student *prev = nullptr;
+	while (tmp)
+	{
+		if (tmp->imie = imie) 
+		{
+			if (prev == nullptr)
+			{
+				head = head->nast;
+				delete tmp;
+				return;
+			}
+		}
+	
+	else if (tmp->nast == nullptr)
+	{
+		prev->nast = nullptr;
+		delete tmp;
+		return;
+	}
+	else
+}
+int main()
+{
+	Student *head = nullptr;
+	Student *nowy = new Student{ "Abc","Xyz" };
+	dodaj(head, nowy);
+	wyswietl(head);
+	system("Pause");
+	return 0;
+	// wrzucic funkcje 
+}
+
+
+
